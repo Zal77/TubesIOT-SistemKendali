@@ -4,10 +4,11 @@ class ldrsensor{
   
   public:
     ldrsensor(int ldrPin) : ldr(ldrPin){
-      pinMode(ldr, INPUT);
     }
 
   int bacaNilai(){
-    return analogRead(ldr);
+    int ldrnilai;
+    ldrnilai = analogRead(ldr);
+    return ldrnilai;
   }
 };
