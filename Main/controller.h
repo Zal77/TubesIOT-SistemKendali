@@ -59,32 +59,28 @@ void callback(char* topic2, byte* payload, unsigned int length) {
   
   Serial.print(topic2);
   Serial.print(" ==> ");
-  Serial.print("Data aktuator"+buffData);
-  Serial.print(String() + "| Nilai PUMP: " + ultrasonik);
-  Serial.print(String() + "\tNilai FAN: " + dht);
-  Serial.println(String() + "\tNilai LED: " + ldr);
 
 
   if (ultrasonik == "PUMPON") {
     digitalWrite(Aktuator.PompaPin, HIGH);
-    Serial.print(Aktuator.PompaPin);
+    Serial.print(String() + "| Nilai PUMP: " + ultrasonik);
   } else if (ultrasonik == "PUMPOFF") {
     digitalWrite(Aktuator.PompaPin, LOW);
-    Serial.print(Aktuator.PompaPin);
+    Serial.print(String() + "| Nilai PUMP: " + ultrasonik);
   }
   if (dht == "FANON") {
     digitalWrite(Aktuator.FanPin, HIGH);
-    Serial.print(Aktuator.FanPin);
+    Serial.print(String() + "\tNilai FAN: " + dht);
   } else if (dht == "FANOFF") {
     digitalWrite(Aktuator.FanPin, LOW);
-    Serial.print(Aktuator.FanPin);
+    Serial.print(String() + "\tNilai FAN: " + dht);
   }
   if (ldr == "LEDON") {
     digitalWrite(Aktuator.LedPin, HIGH);
-    Serial.print(Aktuator.LedPin);
+    Serial.println(String() + "\tNilai LED: " + ldr);
   } else if (ldr == "LEDOFF") {
     digitalWrite(Aktuator.LedPin, LOW);
-    Serial.print(Aktuator.LedPin);
+    Serial.println(String() + "\tNilai LED: " + ldr);
   }
 }
 
